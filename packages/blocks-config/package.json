@@ -1,0 +1,24 @@
+{
+  "name": "@repo/blocks-config",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm dlx tailwindcss -i ./src/style.css -o ./dist/output.css --watch"
+  },
+  "exports": {
+    "./css": "./dist/output.css",
+    "./sub-header": "./src/sub-header/index.ts",
+    "./sub-header/config": "./src/sub-header/config.ts"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@tsconfig/svelte": "^5.0.2",
+    "svelte": "^4.2.7"
+  },
+  "dependencies": {
+    "payload": "^2.0.0",
+    "tailwindcss": "^3.4.0",
+    "@repo/tailwind-config": "workspace:*",
+    "svelte-action-balancer": "^1.0.4"
+  }
+}
