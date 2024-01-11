@@ -1,6 +1,8 @@
-# SvelteKit + Payload CMS Monorepo
+![alt text](./sk-payload-turborepo-starter.jpg)
 
-This project is a monorepo managed by pnpm. It contains several packages and applications, each serving a specific purpose.
+# SvelteKit + Payload CMS + TurboRepo Starter
+
+This project is a TurboRepo managed by pnpm. It contains several packages and applications, each serving a specific purpose.
 
 ## Packages
 
