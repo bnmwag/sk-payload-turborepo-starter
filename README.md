@@ -71,3 +71,17 @@ This will start the SvelteKit application and the Payload CMS application.
 ## Deployment
 
 (Add your deployment instructions here)
+
+## Milestones
+
+The Starter should be good already for the most boilerplate stuff. The following list is a rough roadmap for the next steps. Feel free to add your own ideas.
+
+- [x] Setup SvelteKit
+- [x] Setup Tailwind CSS
+- [x] Setup Payload CMS
+- [x] Setup GraphQL
+- [ ] Build a landing page
+- [ ] Build a blog
+- [ ] Make it seedable
+- [ ] Make it deployable
+- [ ] Create a demo example page
