@@ -9,6 +9,7 @@
   "exports": {
     "./config": "./config.ts",
     "./blocks": "./blocks.ts",
+    "./graphql": "./graphql.ts",
     "./css": "./dist/output.css"
   },
   "devDependencies": {
