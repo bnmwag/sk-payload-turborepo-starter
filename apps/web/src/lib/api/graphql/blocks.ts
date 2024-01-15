@@ -1,13 +1,12 @@
-import { CATEGORIES } from './categories';
-import { META } from './meta';
+import { CATEGORIES } from "./categories";
+import { MEDIA } from "./media";
+import { META } from "./meta";
 
 export const TEASER = `
 ...on Teaser {
   blockType
-  text
-  link {
-    label
-    href
+  logos {
+    ${MEDIA}
   }
 }
 `;

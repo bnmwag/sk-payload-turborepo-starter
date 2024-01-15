@@ -3,6 +3,7 @@ mimeType
 filename
 width
 height
+url
 alt
 `;
 

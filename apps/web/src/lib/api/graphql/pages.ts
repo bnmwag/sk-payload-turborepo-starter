@@ -29,6 +29,7 @@ export const PAGE = `
         id
         title
         layout {
+          ${TEASER}
           ${SUBHEADER}
         }
         ${META}
