@@ -5,12 +5,7 @@ import { adminsOrPublished } from "../../access/adminsOrPublished";
 import { slugField } from "../../fields/slug";
 import { populatePublishedAt } from "../../hooks/populatePublishedAt";
 import { revalidateProject } from "./hooks/revalidateProject";
-import { hero } from "../../fields/hero";
-import { Group } from "../../blocks/group";
-import { SelectedProjects } from "../../blocks/selected-projects";
-import { ProjectsArchive } from "../../blocks/projects-archive";
-import { FormBlock } from "../../blocks/form-block";
-import { BlogArchive } from "../../blocks/blog-archive";
+import { tabsHeroLayout } from "../../fields/tabs-hero-layout";
 
 export const projects: CollectionConfig = {
   slug: "projects",
@@ -60,28 +55,7 @@ export const projects: CollectionConfig = {
       type: "date",
       admin: { position: "sidebar" },
     },
-    {
-      type: "tabs",
-      tabs: [
-        {
-          label: "Hero",
-          name: "hero",
-          fields: [hero],
-        },
-        {
-          label: "Content",
-          name: "content",
-          fields: [
-            {
-              type: "blocks",
-              name: "layout",
-              required: true,
-              blocks: [BlogArchive, FormBlock, ProjectsArchive, SelectedProjects, Group],
-            },
-          ],
-        },
-      ],
-    },
+    tabsHeroLayout,
     slugField(),
   ],
 };

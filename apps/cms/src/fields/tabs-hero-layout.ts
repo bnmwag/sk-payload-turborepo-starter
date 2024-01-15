@@ -1,14 +1,16 @@
 import { Field } from "payload/types";
-import { BlogArchive } from "../blocks/blog-archive";
-import { FormBlock } from "../blocks/form-block";
-import { Group } from "../blocks/group";
-import { ProjectsArchive } from "../blocks/projects-archive";
-import { SelectedProjects } from "../blocks/selected-projects";
 import { hero } from "./hero";
 
-import { SubHeaderConfig } from "@repo/blocks-config/sub-header/config";
+/**
+ * Import all blocks configs from the blocks/config package
+ *
+ * e.g.:
+ * import { BlockConfig } from "@repo/blocks/config";
+ *
+ * run `pnpm generate:block` in the root dir to create a new block
+ */
 
-const blocks = [SubHeaderConfig];
+const blocks = [];
 
 export const tabsHeroLayout: Field = {
   type: "tabs",
