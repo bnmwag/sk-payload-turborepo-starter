@@ -1,9 +1,15 @@
 <script lang="ts">
-  import type { Page } from "@repo/payload-config/types";
+  import type { Media, Page } from "@repo/payload-config/types";
 
   const { description, image, title } = $$props as Page["meta"];
 
-  console.log({ description, image, title });
+  const getImgUrl = (media: string | Media) => {
+    if (typeof media === "string") {
+      return media;
+    } else if (media.url) {
+      return media.url;
+    }
+  };
 </script>
 
 <svelte:head>
@@ -11,10 +17,10 @@
   <meta name="description" content={description} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
+  <!-- <meta property="og:image" content={getImgUrl(image)} /> -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@sveltejs" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={image} />
+  <!-- <meta name="twitter:image" content={getImgUrl(image)} /> -->
 </svelte:head>

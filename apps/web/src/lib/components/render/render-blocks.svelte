@@ -23,16 +23,15 @@
    * @param blockType
    */
   const getComponent = (blockType: BlockTypes) => {
+    console.log("blockType", blockType);
+
     const componentName = (blockType.charAt(0).toUpperCase() + blockType.slice(1)) as BlockKeys;
     return Blocks[componentName];
   };
+
+  console.log("layout", layout);
 </script>
 
 {#each layout as { blockType, ...props }}
-  <svelte:component
-    this={getComponent(blockType)}
-    posts={includePostsInProps.includes(blockType) ? posts : undefined}
-    projects={includeProjectsInProps.includes(blockType) ? projects : undefined}
-    {...props}
-  />
+  <svelte:component this={getComponent(blockType)} {...props} />
 {/each}

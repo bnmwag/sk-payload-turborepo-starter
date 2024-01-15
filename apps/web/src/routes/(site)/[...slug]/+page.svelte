@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PageSpacer, Seo } from "$lib/components/layout";
+  import { PageSpacer } from "$lib/components/layout";
   import { RenderBlocks } from "$lib/components/render";
 
   export let data;
@@ -11,7 +11,7 @@
 
 <!-- <HeroToRender {...page.hero} /> -->
 
-<Seo {...page.meta} />
+<!-- <Seo {...page.meta} /> -->
 
 <PageSpacer>
   <RenderBlocks {layout} />
