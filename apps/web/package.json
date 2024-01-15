@@ -10,6 +10,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
+    "@repo/payload": "workspace:*",
+    "@repo/tailwind": "workspace:*",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -22,9 +24,7 @@
     "vite": "^5.0.3"
   },
   "dependencies": {
-    "@repo/payload-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
-    "@repo/blocks-config": "workspace:*"
+    "@repo/blocks": "workspace:*"
   },
   "type": "module"
 }

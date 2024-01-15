@@ -56,99 +56,31 @@ export interface Page {
   hero: {
     hero: {
       type: 'none' | 'landingPageHeader' | 'subPageHeader';
-      title: string;
+      title?: string | null;
     };
   };
   layout: (
     | {
-        populateBy?: ('collection' | 'selection') | null;
-        relationTo?: 'posts' | null;
-        categories?: (string | Category)[] | null;
-        limit?: number | null;
-        selectedDocs?: (string | null) | Project;
-        populatedDocs?: (string | null) | Project;
-        populatedDocsTotal?: number | null;
+        logos?:
+          | {
+              media: string | Media;
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'blogArchive';
+        blockType: 'teaser';
       }
     | {
-        populateBy?: ('collection' | 'selection') | null;
-        relationTo?: 'projects' | null;
-        services?: (string | Service)[] | null;
-        limit?: number | null;
-        selectedDocs?: (string | null) | Post;
-        populatedDocs?: (string | null) | Post;
-        populatedDocsTotal?: number | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'projectsArchive';
-      }
-    | {
-        title?: string | null;
-        projects?: (string | Project)[] | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'selectedProjects';
-      }
-    | {
-        intro?: {
-          title?: string | null;
-          description?: string | null;
+        title: string;
+        paragraph?: string | null;
+        link?: {
+          label?: string | null;
+          href?: string | null;
         };
-        form: string | Form;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'formBlock';
-      }
-    | {
-        title?: string | null;
-        layout: (
-          | {
-              populateBy?: ('collection' | 'selection') | null;
-              relationTo?: 'posts' | null;
-              categories?: (string | Category)[] | null;
-              limit?: number | null;
-              selectedDocs?: (string | null) | Project;
-              populatedDocs?: (string | null) | Project;
-              populatedDocsTotal?: number | null;
-              id?: string | null;
-              blockName?: string | null;
-              blockType: 'blogArchive';
-            }
-          | {
-              populateBy?: ('collection' | 'selection') | null;
-              relationTo?: 'projects' | null;
-              services?: (string | Service)[] | null;
-              limit?: number | null;
-              selectedDocs?: (string | null) | Post;
-              populatedDocs?: (string | null) | Post;
-              populatedDocsTotal?: number | null;
-              id?: string | null;
-              blockName?: string | null;
-              blockType: 'projectsArchive';
-            }
-          | {
-              title?: string | null;
-              projects?: (string | Project)[] | null;
-              id?: string | null;
-              blockName?: string | null;
-              blockType: 'selectedProjects';
-            }
-          | {
-              intro?: {
-                title?: string | null;
-                description?: string | null;
-              };
-              form: string | Form;
-              id?: string | null;
-              blockName?: string | null;
-              blockType: 'formBlock';
-            }
-        )[];
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'group';
+        blockType: 'subHeader';
       }
   )[];
   slug?: string | null;
@@ -161,6 +93,48 @@ export interface Page {
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
+export interface Post {
+  id: string;
+  title: string;
+  image: string | Media;
+  categories?: (string | Category)[] | null;
+  content: {
+    [k: string]: unknown;
+  }[];
+  publishedAt?: string | null;
+  authors?: (string | User)[] | null;
+  populatedAuthors?:
+    | {
+        id?: string | null;
+        name?: string | null;
+      }[]
+    | null;
+  relatedPosts?: (string | Post)[] | null;
+  slug?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: string | Media | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+export interface User {
+  id: string;
+  name?: string | null;
+  roles?: ('admin' | 'user')[] | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  password: string | null;
+}
 export interface Project {
   id: string;
   title: string;
@@ -170,7 +144,7 @@ export interface Project {
   hero: {
     hero: {
       type: 'none' | 'landingPageHeader' | 'subPageHeader';
-      title: string;
+      title?: string | null;
     };
   };
   content: {
@@ -418,48 +392,6 @@ export interface Form {
     | null;
   updatedAt: string;
   createdAt: string;
-}
-export interface Post {
-  id: string;
-  title: string;
-  image: string | Media;
-  categories?: (string | Category)[] | null;
-  content: {
-    [k: string]: unknown;
-  }[];
-  publishedAt?: string | null;
-  authors?: (string | User)[] | null;
-  populatedAuthors?:
-    | {
-        id?: string | null;
-        name?: string | null;
-      }[]
-    | null;
-  relatedPosts?: (string | Post)[] | null;
-  slug?: string | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: string | Media | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-export interface User {
-  id: string;
-  name?: string | null;
-  roles?: ('admin' | 'user')[] | null;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password: string | null;
 }
 export interface FormSubmission {
   id: string;

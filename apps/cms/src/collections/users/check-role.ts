@@ -1,4 +1,4 @@
-import type { User } from "../../payload-types";
+import type { User } from "@repo/payload-config/types";
 
 export const checkRole = (allRoles: User["roles"] = [], user?: User): boolean => {
   if (user) {

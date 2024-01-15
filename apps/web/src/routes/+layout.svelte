@@ -1,6 +1,6 @@
 <script lang="ts">
   import "../app.pcss";
-  import "@repo/blocks-config/css";
+  import "@repo/blocks/css";
 </script>
 
 <slot />

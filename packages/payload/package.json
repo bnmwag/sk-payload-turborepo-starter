@@ -1,5 +1,5 @@
 {
-  "name": "@repo/payload-config",
+  "name": "@repo/payload",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -7,6 +7,6 @@
     "./graphql": "./schema.graphql"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript": "workspace:*"
   }
 }
