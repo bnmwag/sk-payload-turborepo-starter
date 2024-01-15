@@ -20,7 +20,7 @@ export const pages: CollectionConfig = {
   },
   hooks: {
     beforeChange: [populatePublishedAt],
-    afterChange: [revalidatePage],
+    // afterChange: [revalidatePage],
     // afterRead: [populateArchiveBlock],
   },
   versions: {
